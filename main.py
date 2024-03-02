@@ -1,7 +1,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from models.connection_manager import ConnectionManager
-from frontend.html import html
+from frontend import html
 
 app = FastAPI()
 
