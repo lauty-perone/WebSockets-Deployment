@@ -1,15 +1,13 @@
 html = """
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebSocket Chat</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="chat-container">
-        <h1>Chat en Vivo</h1>
+        <h1>WebSocket Chat</h1>
         <h2>Tu ID es: <span id="ws-id"></span></h2>
         <form class="message-form" onsubmit="sendMessage(event)">
             <input type="text" id="messageText" placeholder="Escribe tu mensaje..." autocomplete="off"/>
