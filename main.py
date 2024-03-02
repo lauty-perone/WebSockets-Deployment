@@ -11,7 +11,7 @@ manager = ConnectionManager()
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 #Al entrar al "/" muestra el html definido 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def get():
     return FileResponse("frontend/index.html")
 
