@@ -1,16 +1,19 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from models.connection_manager import ConnectionManager
-from frontend.html import html
+import frontend
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
 manager = ConnectionManager()
 
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
 #Al entrar al "/" muestra el html definido 
 @app.get("/")
 async def get():
-    return HTMLResponse(html)
+    return FileResponse("frontend/index.html")
 
 
 @app.websocket("/ws/{client_id}")
